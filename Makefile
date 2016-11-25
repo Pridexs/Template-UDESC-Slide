@@ -8,8 +8,7 @@ pdf:
 	$(COMP) ${FILENAME}
 
 read:
-	evince ${FILENAME}.pdf &
+	xdg-open ${FILENAME}.pdf &
 
 clean:
 	rm -f ${FILENAME}.{ps,pdf,log,aux,out,dvi,bbl,blg}
-

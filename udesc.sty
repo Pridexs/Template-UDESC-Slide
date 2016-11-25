@@ -20,7 +20,7 @@
 \usecolortheme{whale}
 
 % Layout scheme for inner elements: rounded elements
-\useinnertheme{rounded} 
+\useinnertheme{rounded}
 
 % Color scheme for inner elements: use foreground colors
 \usecolortheme{orchid}
@@ -39,7 +39,7 @@
 % Outline: default, sections numbered, subsections numbered, circle, square, ball, ball unnumbered
 \setbeamertemplate{sections/subsections in toc}[default]
 
-% General blocks: 
+% General blocks:
 \setbeamertemplate{blocks}[rounded]
 
 \newenvironment{bash}[1]{
@@ -66,11 +66,19 @@
 \setbeamertemplate{background}{\pgfuseimage{bg}}
 
 % Colors
-\usecolortheme[RGB={11,44,12}]{structure}
 
-\setbeamercolor{frametitle}{parent=subsection in head/foot}
-\setbeamercolor{frametitle right}{parent=section in head/foot}
+\definecolor{beamer@udesclightgreen}{rgb}{0.039,0.584,0.322}
+\definecolor{beamer@udescdarkgreen}{rgb}{0.016,0.31,0.153}
+\definecolor{beamer@udesclightred}{rgb}{0.937,0.255,0.212}
+\definecolor{beamer@udescdarkred}{rgb}{0.78,0.125,0.169}
+\definecolor{beamer@udesclogoblack}{rgb}{0.137,0.122,0.125}
 
+\setbeamercolor{structure}{fg=beamer@udesclightgreen}
+
+\setbeamercolor{headline}{fg=beamer@udescdarkgreen}
+\setbeamercolor{frametitle right}{use=structure,fg=white,bg=beamer@udesclightgreen}
+\setbeamercolor{frametitle}{use=structure,fg=white,bg=beamer@udesclightgreen}
+\setbeamercolor{section in head/foot}{use=structure,fg=white,bg=beamer@udesclogoblack}
 
 \pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
   color(0pt)=(frametitle.bg);
@@ -84,7 +92,7 @@
 
 % Footline: AUTHOR | TITLE | DATE FRAMENUMBER
 
-\defbeamertemplate*{footline}{ru theme}{%
+\defbeamertemplate*{footline}{udesc theme}{%
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
@@ -97,7 +105,7 @@
     \usebeamerfont{title in head/foot}\insertshorttitle
   \end{beamercolorbox}%
    \begin{beamercolorbox}[wd=0.083333\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -113,18 +121,18 @@
     \begin{beamercolorbox}[wd=.5\paperwidth,ht=\@tempdimb]{section in head/foot}%
       \vbox to\@tempdimb{\vfil\insertsectionnavigation{.5\paperwidth}\vfil}%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.4\paperwidth,ht=\@tempdimb,right]{subsection in head/foot}%
+    \begin{beamercolorbox}[wd=.45\paperwidth,ht=\@tempdimb,right]{subsection in head/foot}%
       \vbox to\@tempdimb{\vfil\vfil\textbf{\footnotesize\insertshortinstitute~~}\vfil}%
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd=.1\paperwidth,ht=\@tempdimb,left]{subsection in head/foot}%
-      \vbox to\@tempdimb{\vfil\insertlogo\vfil\vfil}%
+      \vbox to\@tempdimb{\vfil\insertlogo\vfil}%
     \end{beamercolorbox}%
   \fi%
 }
 
 \defbeamertemplate*{frametitle}{udesc theme}{%
   \nointerlineskip%
-  %\vskip-2pt%
+  \vskip-2pt%
   \hbox{\leavevmode
     \advance\beamer@leftmargin by -12bp%
     \advance\beamer@rightmargin by -12bp%
