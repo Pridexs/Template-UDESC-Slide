@@ -95,12 +95,13 @@
 \defbeamertemplate*{footline}{udesc theme}{%
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
     \usebeamerfont{author in head/foot}\insertshortauthor
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortdate
-  \end{beamercolorbox}%
+  % Descomente isso daqui e altere wd pra .25 se quer data em baixo
+  %\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    %\usebeamerfont{author in head/foot}\insertshortdate
+  %\end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.416667\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle
   \end{beamercolorbox}%
@@ -171,3 +172,7 @@
 %    \hbox to\textwidth{\hskip-\Gm@lmargin\pgfuseshading{beamer@topshade}\hskip-\Gm@rmargin}
 %    \vskip-2pt
 }
+
+\setbeamertemplate{headline}{}
+\useoutertheme[subsection=false]{miniframes}
+%\date[\today]{}
